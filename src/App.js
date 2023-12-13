@@ -55,13 +55,13 @@ const App = () => {
 						<Route path={process.env.PUBLIC_URL + "/about-us"} element={<AboutUs />} />
 						<Route path={process.env.PUBLIC_URL + "/testimonials"} element={<Testimonials />} />
 						<Route path={process.env.PUBLIC_URL + "/contact"} element={<Contact />} />
-						<Route path={process.env.PUBLIC_URL + "/404"} element={<ErrorPage />} />
+						<Route path={process.env.PUBLIC_URL + "/*"} element={<ErrorPage />} />
 						<Route path={process.env.PUBLIC_URL + "/privacy-policy"} element={<PrivacyPolicy />} />
 						<Route path={process.env.PUBLIC_URL + "/terms-use"} element={<TermsOfUse />} />
 					</Routes>
 				</ScrollToTop>
 			</Router>
-			<FacebookMsg />
+			{/* <FacebookMsg /> */}
 		</>
 	);
 };

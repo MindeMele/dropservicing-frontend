@@ -5,7 +5,7 @@ import Alert from "react-bootstrap/Alert";
 const Result = () => {
 	return (
 		<Alert variant='success' className='success-msg'>
-			Your Message has been successfully sent.
+			Žinutė buvo sėkmingai išsiųsta!
 		</Alert>
 	);
 };

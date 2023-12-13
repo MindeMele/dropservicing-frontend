@@ -5,8 +5,6 @@ import SEO from "../common/SEO";
 import BcrumbBannerOne from "../elements/breadcrumb/BcrumbBannerOne";
 import CtaLayoutOne from "../component/cta/CtaLayoutOne";
 import ColorSwitcher from "../elements/switcher/ColorSwitcher";
-import ProcessOne from "../component/process/ProcessOne";
-import AboutThree from "../component/about/AboutThree";
 import AboutFive from "../component/about/AboutFive";
 
 const AboutUs = () => {
@@ -17,14 +15,14 @@ const AboutUs = () => {
 			<main className='main-wrapper'>
 				<HeaderOne />
 				<BcrumbBannerOne
-					title='One of the fastest growing agency'
-					paragraph='We design and develop web and mobile applications for our clients worldwide.'
+					title='Viena iš greičiausiai augančių agentūrų'
+					paragraph='Mes padedame klientams išpildyti jų idėjas įgyvendinant verslo planus.'
 					styleClass='thumbnail-4'
 					mainThumb='/images/banner/banner-thumb-3.png'
 				/>
-				<AboutThree />
+				{/* <AboutThree /> */}
 				<AboutFive />
-				<ProcessOne />
+				{/* <ProcessOne /> */}
 				<CtaLayoutOne />
 				<FooterOne parentClass='' />
 			</main>

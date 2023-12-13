@@ -1,8 +1,18 @@
 import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { Link } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const BannerOne = () => {
+	const { data } = useFetch({ url: "http://localhost:1337/api/main-texts" });
+
+	if (!data) {
+		return <div>Loading...</div>;
+	}
+
+	const headerTitle = data.filter((item) => item.attributes.content_type === "header_title");
+	const headerSubTitle = data.filter((item) => item.attributes.content_type === "header_subtitle");
+
 	return (
 		<div className='banner banner-style-1'>
 			<div className='container'>
@@ -10,10 +20,12 @@ const BannerOne = () => {
 					<div className='col-lg-6'>
 						<div className='banner-content'>
 							<AnimationOnScroll animateIn='fadeInUp' animateOnce={true} delay={100}>
-								<h1 className='title'>Pradėkite kurti verslą jau dabar.</h1>
+								<h1 className='title'>
+									{headerTitle.length > 0 && headerTitle[0].attributes.content}
+								</h1>
+
 								<span className='subtitle'>
-									Kūrybiškas ir efektyvus verslo įgyvendinimas prasideda jau dabar. Paverskite idėja
-									- realybe.
+									{headerSubTitle.length > 0 && headerSubTitle[0].attributes.content}
 								</span>
 								<Link
 									to={process.env.PUBLIC_URL + "/contact"}
@@ -28,18 +40,6 @@ const BannerOne = () => {
 							<AnimationOnScroll animateIn='zoomIn' duration={2} delay={300} animateOnce={true}>
 								<div className='large-thumb'>
 									<img src={process.env.PUBLIC_URL + "/images/banner/window.png"} alt='Laptop' />
-								</div>
-							</AnimationOnScroll>
-							<AnimationOnScroll
-								animateIn='slideInRight'
-								duration={2}
-								delay={300}
-								animateOnce={true}>
-								<div className='large-thumb-2'>
-									<img
-										src={process.env.PUBLIC_URL + "/images/banner/laptop-poses.png"}
-										alt='Laptop'
-									/>
 								</div>
 							</AnimationOnScroll>
 							<ul className='list-unstyled shape-group'>

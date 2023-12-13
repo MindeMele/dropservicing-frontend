@@ -2,9 +2,7 @@ import React from "react";
 import FooterOne from "../common/footer/FooterOne";
 import HeaderOne from "../common/header/HeaderOne";
 import SEO from "../common/SEO";
-import AboutOne from "../component/about/AboutOne";
 import BannerOne from "../component/banner/BannerOne";
-import BrandOne from "../component/brand/BrandOne";
 import CounterUpOne from "../component/counterup/CounterUpOne";
 import CtaLayoutOne from "../component/cta/CtaLayoutOne";
 import ProjectOne from "../component/project/ProjectOne";
@@ -13,7 +11,17 @@ import TestimonialOne from "../component/testimonial/TestimonialOne";
 import SectionTitle from "../elements/section-title/SectionTitle";
 import ColorSwitcher from "../elements/switcher/ColorSwitcher";
 
+import useFetch from "../hooks/useFetch";
+
 const DigitalAgency = () => {
+	const { data } = useFetch({ url: "http://localhost:1337/api/main-texts" });
+
+	if (!data) {
+		return <div>Loading...</div>;
+	}
+
+	const servicesTitle = data.filter((item) => item.attributes.content_type === "services_title");
+
 	return (
 		<>
 			<SEO title='Everything You Need!' />
@@ -24,10 +32,8 @@ const DigitalAgency = () => {
 				<div className='section section-padding-2 bg-color-dark'>
 					<div className='container'>
 						<SectionTitle
-							subtitle='What We Can Do For You'
-							title='Services we can help you with'
-							description='Nulla facilisi. Nullam in magna id dolor 
-                        blandit rutrum eget vulputate augue sed eu imperdiet.'
+							subtitle='Ką Mes Galime Padaryti Dėl Jūsų'
+							title={servicesTitle.length > 0 && servicesTitle[0].attributes.content}
 							textAlignment='heading-light-left'
 							textColor=''
 						/>
@@ -47,11 +53,10 @@ const DigitalAgency = () => {
 						</li>
 					</ul>
 				</div>
-				<AboutOne />
+				{/* <AboutOne /> */}
 				<ProjectOne />
 				<CounterUpOne />
 				<TestimonialOne />
-				<BrandOne />
 				<CtaLayoutOne />
 				<FooterOne parentClass='' />
 			</main>

@@ -76,11 +76,8 @@ const FooterOne = ({ parentClass }) => {
 						<div className='col-xl-6 col-lg-5 d-flex align-items-center'>
 							<div className='footer-widget border-end'>
 								<div className='footer-newsletter'>
-									<h2 className='title'>Get in touch!</h2>
-									<p>
-										Fusce varius, dolor tempor interdum tristique, dui urna bib endum magna, ut
-										ullamcorper purus
-									</p>
+									<h2 className='title'>Susisiekite su mumis!</h2>
+									<p>Greitas ir patogus būdas įgyvendinti savo projektą jau dabar!</p>
 								</div>
 							</div>
 						</div>
@@ -88,7 +85,7 @@ const FooterOne = ({ parentClass }) => {
 							<div className='row'>
 								<div className='col-sm-6'>
 									<div className='footer-widget'>
-										<h6 className='widget-title'>Services</h6>
+										<h6 className='widget-title'>Paslaugos</h6>
 										<div className='footer-menu-link'>
 											<ul className='list-unstyled'>
 												{getServiceData.slice(0, 6).map((data, index) => (
@@ -105,34 +102,22 @@ const FooterOne = ({ parentClass }) => {
 										</div>
 									</div>
 								</div>
-								<div className='col-sm-3'>
+								<div className='col-sm-6'>
 									<div className='footer-widget'>
-										<h6 className='widget-title'>Resourses</h6>
+										<h6 className='widget-title'>Pagalba</h6>
 										<div className='footer-menu-link'>
 											<ul className='list-unstyled'>
 												<li>
-													<Link to={process.env.PUBLIC_URL + "/project-grid-one"}>Portfolio</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div className='col-sm-3'>
-									<div className='footer-widget'>
-										<h6 className='widget-title'>Support</h6>
-										<div className='footer-menu-link'>
-											<ul className='list-unstyled'>
-												<li>
-													<Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
+													<Link to={process.env.PUBLIC_URL + "/contact"}>Kontaktai</Link>
 												</li>
 												<li>
 													{" "}
 													<Link to={process.env.PUBLIC_URL + "/privacy-policy"}>
-														Privacy Policy
+														Privatumo Politika
 													</Link>
 												</li>
 												<li>
-													<Link to={process.env.PUBLIC_URL + "/terms-use"}>Terms of Use</Link>
+													<Link to={process.env.PUBLIC_URL + "/terms-use"}>Naudojimo sąlygos</Link>
 												</li>
 											</ul>
 										</div>
@@ -148,7 +133,7 @@ const FooterOne = ({ parentClass }) => {
 							<div className='footer-copyright'>
 								<span className='copyright-text'>
 									© {new Date().getFullYear()}. All rights reserved by{" "}
-									<a href='https://devocode.lt/'>DevcCode</a>.
+									<a href='https://devocode.lt/'>DevCode</a>.
 								</span>
 							</div>
 						</div>
@@ -156,10 +141,10 @@ const FooterOne = ({ parentClass }) => {
 							<div className='footer-bottom-link'>
 								<ul className='list-unstyled'>
 									<li>
-										<Link to={process.env.PUBLIC_URL + "/privacy-policy"}>Privacy Policy</Link>
+										<Link to={process.env.PUBLIC_URL + "/privacy-policy"}>Privatumo Politika</Link>
 									</li>
 									<li>
-										<Link to={process.env.PUBLIC_URL + "/terms-use"}>Terms of Use</Link>
+										<Link to={process.env.PUBLIC_URL + "/terms-use"}>Naudojimo sąlygos</Link>
 									</li>
 								</ul>
 							</div>

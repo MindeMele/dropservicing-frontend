@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../elements/logo/Logo";
 import Nav from "../../common/header/Nav";
-import OffcanvasMenu from "./OffcanvasMenu";
 import StickyHeader from "./StickyHeader";
 import SwitcherHeader from "../../elements/switcher/SwitcherHeader";
 import MobileMenu from "./MobileMenu";
 
 const HeaderOne = () => {
-	const [showOffcanvas, setShowOffcanvas] = useState(false);
-
-	const OffcanvasHandleClose = () => setShowOffcanvas(false);
-	const OffcanvasHandleShow = () => setShowOffcanvas(true);
-
 	const sticky = StickyHeader(100);
 
 	const MobileMenuHandler = () => {
@@ -51,13 +45,6 @@ const HeaderOne = () => {
 							</div>
 							<div className='header-action'>
 								<ul className='list-unstyled'>
-									<li className='sidemenu-btn d-lg-block d-none'>
-										<button className='btn-wrap' onClick={OffcanvasHandleShow}>
-											<span></span>
-											<span></span>
-											<span></span>
-										</button>
-									</li>
 									<li className='mobile-menu-btn sidemenu-btn d-lg-none d-block'>
 										<button className='btn-wrap' onClick={MobileMenuHandler}>
 											<span></span>
@@ -74,7 +61,6 @@ const HeaderOne = () => {
 					</div>
 				</div>
 			</header>
-			<OffcanvasMenu offcanvasShow={showOffcanvas} offcanvasHide={OffcanvasHandleClose} />
 			<MobileMenu MobileHandler={MobileMenuHandler} />
 		</>
 	);
